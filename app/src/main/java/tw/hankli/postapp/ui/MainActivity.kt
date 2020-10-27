@@ -1,7 +1,8 @@
-package tw.hankli.postapp
+package tw.hankli.postapp.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import tw.hankli.postapp.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
