@@ -22,3 +22,5 @@ An Android social media app using Android Jetpack and Firebase
 > - [GitHub firebase/FirebaseUI-Android](https://github.com/firebase/FirebaseUI-Android)
 
 5. Check there is a user, if no, navigate to AuthFragment
+
+6. Show Logo on AuthFragment and switch to FirebaseUI to authenticate.

@@ -19,5 +19,14 @@ class MainActivity : AppCompatActivity() {
         if (!App.hasUser()) {
             navController.navigate(MainNavDirections.actionGlobalAuthFragment())
         }
+
+        navController.addOnDestinationChangedListener { controller, destination, arguments ->
+            // Action Bar
+            if (destination.id == R.id.authFragment) {
+                supportActionBar?.hide()
+            } else {
+                supportActionBar?.show()
+            }
+        }
     }
 }
