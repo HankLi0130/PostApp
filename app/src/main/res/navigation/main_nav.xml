@@ -5,6 +5,12 @@
     android:id="@+id/main_nav"
     app:startDestination="@id/postFragment">
 
+    <action
+        android:id="@+id/action_global_authFragment"
+        app:destination="@id/authFragment"
+        app:popUpTo="@id/main_nav"
+        app:popUpToInclusive="true" />
+
     <fragment
         android:id="@+id/authFragment"
         android:name="tw.hankli.postapp.ui.auth.AuthFragment"
@@ -15,14 +21,6 @@
         android:id="@+id/postFragment"
         android:name="tw.hankli.postapp.ui.post.PostFragment"
         android:label="PostFragment"
-        tools:layout="@layout/fragment_post">
-
-        <action
-            android:id="@+id/action_postFragment_to_authFragment"
-            app:destination="@id/authFragment"
-            app:popUpTo="@id/main_nav"
-            app:popUpToInclusive="true" />
-
-    </fragment>
+        tools:layout="@layout/fragment_post" />
 
 </navigation>
