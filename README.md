@@ -2,7 +2,7 @@
 
 An Android social media app using Android Jetpack and Firebase
 
-## How to implement?
+## Step by step with Hank
 
 1. Create a project called Post App
 
