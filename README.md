@@ -13,6 +13,6 @@ An Android social media app using Android Jetpack and Firebase
 > - [Java 8 language feature support (Android Gradle Plugin 3.0.0+)](https://developer.android.com/studio/write/java8-support#supported_features)
 
 - Others
->- [Classes and Inheritance](https://kotlinlang.org/docs/reference/classes.html)
+>- [Kotlin Classes and Inheritance](https://kotlinlang.org/docs/reference/classes.html)
 
 ### Lesson 2
