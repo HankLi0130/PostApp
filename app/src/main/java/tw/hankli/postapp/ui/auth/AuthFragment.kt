@@ -5,26 +5,30 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.os.Handler
+import android.os.Looper
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.IdpResponse
+import kotlinx.android.synthetic.main.fragment_auth.*
 import tw.hankli.postapp.R
 
 class AuthFragment : Fragment(R.layout.fragment_auth) {
 
     companion object {
         private const val REQUEST_SIGN_IN = 100
+        private const val FIREBASE_TOS_URL = "https://firebase.google.com/terms/"
+        private const val FIREBASE_PRIVACY_POLICY_URL =
+            "https://firebase.google.com/terms/analytics/#7_privacy";
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        Handler().postDelayed(
-            Runnable { showAuthUI() },
-            1000L
-        )
+        view_sign_in.setOnClickListener {
+            showAuthUI()
+        }
     }
 
     private fun showAuthUI() {
@@ -37,6 +41,9 @@ class AuthFragment : Fragment(R.layout.fragment_auth) {
         val intent = AuthUI.getInstance()
             .createSignInIntentBuilder()
             .setAvailableProviders(idpConfigs)
+            .setLogo(R.drawable.ic_social_media)
+            .setTheme(R.style.SignInTheme)
+            .setTosAndPrivacyPolicyUrls(FIREBASE_TOS_URL, FIREBASE_PRIVACY_POLICY_URL)
             .build()
 
         startActivityForResult(intent, REQUEST_SIGN_IN)
@@ -59,7 +66,6 @@ class AuthFragment : Fragment(R.layout.fragment_auth) {
                 if (response != null) {
                     response.error?.printStackTrace()
                 }
-                requireActivity().finish()
             }
         }
     }

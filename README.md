@@ -21,7 +21,27 @@ An Android social media app using Android Jetpack and Firebase
 4. Import FirebaseUI Auth
 > - [GitHub firebase/FirebaseUI-Android](https://github.com/firebase/FirebaseUI-Android)
 
-5. Check there is a user, if no, navigate to AuthFragment
+5. Let's do an auth flow. First of all, we need functions to help us to handle users, create an `App` and add relevant functions using FirebaseUI.
 
-6. Show Logo on AuthFragment and switch to FirebaseUI to authenticate.
+6. Check the user in `onStart()` in MainActivity, if the user doesn't exist navigate to the AuthFragment.
+
+7. Create a button in AuthFragment, after click the button, it'll call FirebaseUI Auth to help the user to sign in (include sign up). Right now, we need to setup Providers.
 > - [Sign in](https://firebase.google.com/docs/auth/android/firebaseui#sign_in)
+> - [Identity provider configuration](https://github.com/firebase/FirebaseUI-Android/blob/master/auth/README.md#identity-provider-configuration)
+
+8. Configure Facebook Provider
+
+- Facebook Developer
+> 1. Create a new project on Facebook Developer website.
+> 2. Setup Facebook login app.
+> 3. Settings -> Basic -> get App ID, App Secret.
+
+- Firebase Console
+> 1. Setup App ID, App Secret.
+> 2. Assign the OAuth redirect URL to the Facebook App.
+
+- Android Studio
+> 1. Setup `facebook_application_id` and `facebook_login_protocol_scheme` in strings.xml.
+> 2. Coding IdpConfig and others in AuthFragment.
+
+
